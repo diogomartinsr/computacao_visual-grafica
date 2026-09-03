@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Aula 3 | Computação Visual</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="topbar"><div class="wrap nav">
+<a class="brand" href="index.html"><span class="brand-mark">CV</span><span><b>Computação Visual</b><small>Blog da disciplina</small></span></a>
+<nav><a href="index.html">Início</a><a href="index.html#aulas">Aulas</a></nav>
+</div></header>
+
+<main class="wrap article">
+<a class="back" href="index.html">← Voltar para as aulas</a>
+<span class="label">AULA 03 · VISÃO COMPUTACIONAL</span>
+<h1>Visão Computacional na Inteligência Artificial</h1>
+<p class="lead">Depois de entender como imagens são representadas digitalmente e por que uma inteligência artificial pode cometer erros ao gerar imagens, surge uma nova pergunta: como uma máquina consegue identificar o que existe dentro de uma imagem?</p>
+
+<h2>O que é Visão Computacional?</h2>
+<p>A Visão Computacional é uma área da computação que permite que máquinas analisem imagens e vídeos para reconhecer e interpretar informações visuais. Em vez de apenas armazenar uma fotografia, um sistema pode utilizar os dados presentes nela para identificar objetos, pessoas, padrões e outras características.</p>
+<p>Segundo a AWS, sistemas de Visão Computacional utilizam Inteligência Artificial e Aprendizado de Máquina para processar dados visuais e realizar tarefas como identificação de objetos, reconhecimento facial, classificação, monitoramento e detecção.</p>
+
+<h2>Como uma máquina "enxerga"?</h2>
+<p>Uma pessoa olha para uma fotografia e rapidamente reconhece uma pessoa, um carro ou um animal. Para o computador, entretanto, a imagem é formada por dados, principalmente pixels e valores de cor.</p>
+<p>Para transformar esses números em informações úteis, modelos de Aprendizado de Máquina são treinados com grandes quantidades de imagens. Durante o treinamento, o sistema procura padrões que aparecem repetidamente. Assim, depois de aprender com muitos exemplos, ele pode utilizar esses padrões para analisar uma imagem que ainda não conhecia.</p>
+
+<div class="reflection">
+<h2>De forma simplificada</h2>
+<p>Imagem → Pixels → Dados → Padrões aprendidos → Identificação → Resultado</p>
+</div>
+
+<h2>O papel da Inteligência Artificial</h2>
+<p>A Inteligência Artificial é importante porque fornece métodos capazes de aprender esses padrões automaticamente. Entre as técnicas utilizadas estão o aprendizado profundo e as redes neurais.</p>
+<p>Um exemplo são as Redes Neurais Convolucionais (CNNs). Elas analisam uma imagem a partir dos pixels e conseguem identificar características visuais progressivamente. Em etapas iniciais, podem encontrar contornos e formas simples; depois, combinam essas informações para reconhecer características mais complexas.</p>
+<p>Para imagens individuais, as CNNs são bastante utilizadas. Em situações envolvendo sequências de imagens, como vídeos, outras arquiteturas podem ajudar a analisar a relação entre os diferentes quadros.</p>
+
+<h2>O que a Visão Computacional consegue fazer?</h2>
+<h3>1. Classificação de imagens</h3>
+<p>A classificação procura determinar a qual categoria uma imagem pertence. Por exemplo, um sistema pode analisar uma fotografia e classificá-la como contendo um carro, um cachorro ou uma paisagem.</p>
+<h3>2. Detecção de objetos</h3>
+<p>A detecção vai além da classificação: ela procura localizar os objetos dentro da imagem. É comum representar cada objeto encontrado por uma caixa ao seu redor. Essa técnica pode ser usada em câmeras, sistemas industriais e veículos.</p>
+<h3>3. Rastreamento</h3>
+<p>No rastreamento, o sistema acompanha um objeto ao longo de vários quadros. Isso é especialmente útil em vídeos, como no monitoramento de trânsito.</p>
+<h3>4. Segmentação</h3>
+<p>A segmentação trabalha diretamente com regiões e pixels da imagem para determinar a forma de cada objeto. Dessa maneira, é possível diferenciar diferentes elementos presentes em uma mesma cena com maior precisão.</p>
+
+<h2>Onde encontramos essa tecnologia?</h2>
+<p>A Visão Computacional já está presente em diversas áreas. Entre os exemplos apresentados pela AWS estão segurança, indústria, veículos autônomos, agricultura e saúde.</p>
+<p>Em veículos autônomos, por exemplo, câmeras podem fornecer informações para identificar pedestres, sinais de trânsito, outros veículos e obstáculos. Na indústria, a tecnologia pode ajudar a encontrar defeitos em produtos. Na agricultura, imagens podem ser analisadas para acompanhar plantações e identificar possíveis problemas. Já na saúde, a análise de imagens médicas pode auxiliar profissionais na avaliação de exames.</p>
+
+<h2>Visão Computacional x Processamento de Imagem</h2>
+<p>Esses dois conceitos estão relacionados, mas não são exatamente a mesma coisa. O processamento de imagem está mais ligado a modificar ou melhorar uma imagem, por exemplo, aplicando filtros, aumentando a nitidez ou reduzindo ruídos.</p>
+<p>A Visão Computacional, por outro lado, busca interpretar o conteúdo da imagem. Em outras palavras, o processamento pode melhorar a imagem, enquanto a Visão Computacional procura descobrir o que existe nela.</p>
+
+<div class="reflection">
+<h2>Minha reflexão</h2>
+<p>Nesta aula, comecei a perceber melhor a diferença entre simplesmente ter uma imagem e conseguir interpretar o que ela representa. Para nós, reconhecer um objeto em uma fotografia parece algo natural. Para um computador, isso depende da transformação da imagem em dados e do aprendizado de padrões.</p>
+<p>Esse assunto também se conecta com a Aula 2. Se uma IA pode ter dificuldades para gerar imagens corretamente, entender como os sistemas analisam imagens ajuda a perceber que a relação entre IA e mundo visual é baseada em dados, padrões e modelos matemáticos, e não em uma compreensão humana da realidade.</p>
+</div>
+
+<h2>Referência</h2>
+<p>AWS. <strong>O que é a visão computacional?</strong> <a class="reference" href="https://aws.amazon.com/pt/what-is/computer-vision/" target="_blank" rel="noopener">Acessar a referência na AWS →</a></p>
+</main>
+
+<footer><div class="wrap footer"><span>Computação Visual — Aula 03</span><span>Diário da disciplina</span></div></footer>
+</body></html>
