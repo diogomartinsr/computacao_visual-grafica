@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 4 | Biometria Ocular: Íris e Retina</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="logo" href="index.html">Computação Visual</a>
+      <a class="back-link" href="index.html">← Voltar para o início</a>
+    </div>
+  </header>
+
+  <main class="container article">
+    <span class="tag">AULA 4</span>
+    <h1>Biometria Ocular: reconhecimento pela íris e retina</h1>
+    <p class="lead">
+      Se cada pessoa possui características únicas nos olhos, será que um computador
+      consegue usar essas diferenças para descobrir quem está olhando para ele?
+      Nesta aula, vamos conhecer a biometria ocular e entender como imagens da íris
+      e da retina podem ser transformadas em informações para identificação.
+    </p>
+
+    <section>
+      <h2>O que é biometria?</h2>
+      <p>
+        Biometria é uma forma de identificação ou autenticação baseada em características
+        físicas ou comportamentais de uma pessoa. Entre os exemplos estão a impressão
+        digital, o reconhecimento facial, a voz e a íris.
+      </p>
+      <p>
+        A ideia é utilizar características que possam ser medidas e transformadas em
+        dados. Dessa maneira, um sistema consegue comparar uma nova informação com
+        um registro realizado anteriormente.
+      </p>
+    </section>
+
+    <section>
+      <h2>Por que usar o olho na identificação?</h2>
+      <p>
+        O olho possui estruturas com padrões muito particulares. A íris é a parte
+        colorida do olho e apresenta uma textura formada por diferentes detalhes.
+        Esses padrões possuem grande variedade entre as pessoas e podem ser utilizados
+        como uma característica biométrica.
+      </p>
+      <p>
+        Um ponto interessante é que até mesmo as íris dos dois olhos de uma mesma pessoa
+        possuem padrões diferentes. Por isso, o reconhecimento da íris pode fornecer
+        informações bastante específicas para diferenciar indivíduos.
+      </p>
+    </section>
+
+    <section>
+      <h2>Como funciona o reconhecimento da íris?</h2>
+      <p>
+        O processo pode ser entendido como uma sequência de etapas. Primeiro, uma câmera
+        captura uma imagem do olho. Depois, o sistema precisa localizar a região da íris,
+        analisar sua textura e transformar as características encontradas em uma
+        representação matemática.
+      </p>
+
+      <div class="highlight">
+        <strong>De forma simplificada:</strong><br>
+        Captura da imagem → Localização da íris → Análise da textura → Modelo matemático → Comparação
+      </div>
+
+      <h3>1. Aquisição da imagem</h3>
+      <p>
+        O primeiro passo é obter uma imagem com qualidade suficiente para que os detalhes
+        da íris possam ser analisados. Sistemas de reconhecimento podem utilizar imagens
+        no espectro infravermelho próximo para destacar características da textura.
+      </p>
+
+      <h3>2. Segmentação</h3>
+      <p>
+        Depois da captura, o sistema precisa identificar exatamente onde está a íris.
+        Reflexos, sombras, pálpebras e cílios podem dificultar essa etapa. Por isso,
+        algoritmos precisam separar a região relevante do restante da imagem.
+      </p>
+
+      <h3>3. Normalização e codificação</h3>
+      <p>
+        Como uma mesma íris pode aparecer em posições e condições diferentes, a região
+        encontrada pode ser normalizada para facilitar a comparação. Em seguida, suas
+        características são codificadas em uma representação matemática, como valores
+        numéricos ou uma sequência de bits.
+      </p>
+
+      <h3>4. Comparação</h3>
+      <p>
+        Por fim, a representação obtida é comparada com um registro armazenado. O sistema
+        verifica o grau de similaridade entre as informações para determinar se elas
+        correspondem ao mesmo padrão biométrico.
+      </p>
+    </section>
+
+    <section>
+      <h2>E a retina?</h2>
+      <p>
+        A retina fica na parte posterior do olho e possui uma rede de vasos sanguíneos
+        que também apresenta características próprias. Na biometria da retina, essas
+        características podem ser utilizadas como fonte de informação para identificação.
+      </p>
+      <p>
+        A principal diferença em relação à íris está na região analisada. Enquanto o
+        reconhecimento da íris trabalha com os padrões da parte colorida do olho, a
+        biometria da retina busca informações da estrutura localizada no fundo do olho.
+      </p>
+    </section>
+
+    <section>
+      <h2>Íris x Retina</h2>
+      <div class="highlight">
+        <strong>Íris:</strong> analisa os padrões de textura da parte colorida do olho.<br><br>
+        <strong>Retina:</strong> analisa características da estrutura vascular localizada na parte posterior do olho.
+      </div>
+      <p>
+        Na prática, os dois métodos apresentam diferenças importantes de captura e de
+        aplicação. O reconhecimento da íris pode ser realizado sem contato físico e
+        depende de uma boa captura da região visível do olho. Já a análise da retina
+        envolve uma região interna do olho e pode exigir equipamentos e condições de
+        captura mais específicas.
+      </p>
+    </section>
+
+    <section>
+      <h2>Onde essa tecnologia pode ser utilizada?</h2>
+      <p>
+        Sistemas biométricos podem ser utilizados em situações nas quais é necessário
+        verificar a identidade de uma pessoa. Entre os exemplos estão controle de acesso,
+        ambientes restritos, sistemas de segurança e processos de identificação.
+      </p>
+      <p>
+        O reconhecimento de íris também possui aplicações relacionadas a fronteiras,
+        aeroportos e outros ambientes que precisam realizar verificações de identidade.
+      </p>
+    </section>
+
+    <section>
+      <h2>Qual é a relação com a Computação Visual?</h2>
+      <p>
+        A biometria ocular é um exemplo muito claro de como a Computação Visual transforma
+        algo do mundo real em dados que podem ser processados por um computador.
+      </p>
+      <p>
+        Primeiro, uma câmera captura uma imagem. Depois, algoritmos identificam a região
+        importante, extraem características e transformam essas informações em uma
+        representação que pode ser comparada. Assim, uma imagem que para nós é apenas
+        uma fotografia de um olho passa a ser uma fonte de dados para um sistema computacional.
+      </p>
+
+      <div class="highlight">
+        <strong>Imagem → Processamento → Extração de características → Dados → Comparação → Identificação</strong>
+      </div>
+    </section>
+
+    <section>
+      <h2>Minha reflexão</h2>
+      <p>
+        O que mais chamou minha atenção nesta aula foi perceber que uma característica
+        visual aparentemente simples pode carregar muitas informações. Quando olhamos
+        para um olho, normalmente pensamos apenas na cor ou na aparência. Para um sistema
+        computacional, porém, a textura e os padrões presentes nessa imagem podem ser
+        transformados em dados e utilizados em um processo de identificação.
+      </p>
+      <p>
+        Essa aula também se conecta diretamente com a Aula 3. Na aula anterior vimos que
+        a Visão Computacional permite que computadores analisem imagens e encontrem
+        informações nelas. Agora vemos uma aplicação específica dessa ideia: analisar
+        uma imagem do olho para extrair características biométricas.
+      </p>
+    </section>
+
+    <section class="reference">
+      <h2>Referências</h2>
+      <p>
+        NAAT.TECH. <strong>Biometria no olho: íris e retina.</strong>
+      </p>
+      <p>
+        <a href="https://www.naat.tech/blog/biometria-no-olho-iris-e-retina" target="_blank" rel="noopener noreferrer">
+          Acessar a referência da NAAT.TECH →
+        </a>
+      </p>
+      <p>
+        DIAS, A. L.; MANAUT, L. <strong>Como funcionam os sistemas biométricos de reconhecimento pela íris?</strong> Eu Percebo — UnB, 2022.
+      </p>
+      <p>
+        <a href="https://eupercebo.unb.br/2022/07/27/como-funcionam-os-sistemas-biometricos-de-reconhecimento-pela-iris/" target="_blank" rel="noopener noreferrer">
+          Acessar a referência da UnB →
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Blog de Computação Visual • Aula 4</p>
+    </div>
+  </footer>
+</body>
+</html>
