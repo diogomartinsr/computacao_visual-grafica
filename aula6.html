@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 6 | Detecção de Bordas e Reconhecimento de Formas — Computação Visual</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="container nav">
+  <a class="logo" href="index.html">Computação Visual</a>
+  <a class="back-link" href="index.html#aulas">← Voltar para as aulas</a>
+</div></header>
+<main class="container article">
+  <span class="tag">AULA 6</span>
+  <h1>Detecção de Bordas e Reconhecimento de Formas</h1>
+  <p class="lead">Como algoritmos encontram contornos e utilizam essas informações para analisar objetos e estruturas visuais.</p>
+  <section><h2>O que são bordas?</h2><p>Bordas são regiões onde a intensidade ou a cor muda de maneira significativa. Elas frequentemente indicam limites entre objetos, diferenças de textura ou mudanças de iluminação. Detectá-las ajuda o computador a localizar estruturas visuais.</p></section>
+<section><h2>Por que os filtros são importantes?</h2><p>Imagens com ruído podem produzir bordas falsas. Por isso, a suavização estudada na Aula 5 costuma ser uma etapa anterior à detecção de bordas. Esse é um exemplo de como diferentes técnicas de processamento de imagens trabalham juntas.</p></section>
+<section><h2>Operador Sobel</h2><p>O operador Sobel utiliza pequenas máscaras para estimar mudanças de intensidade nas direções horizontal e vertical. Com essas informações, é possível calcular a força aproximada de uma borda e sua orientação.</p></section>
+<section><h2>Detector de Canny</h2><p>O método Canny combina etapas para encontrar bordas mais finas e consistentes. Em termos gerais, inclui suavização, cálculo dos gradientes, supressão de respostas que não são máximas locais e seleção de bordas por limiares com acompanhamento de conexões.</p><div class="highlight"><strong>Diferença importante:</strong> Sobel estima gradientes da imagem; Canny utiliza gradientes e outras etapas para produzir um mapa de bordas.</div></section>
+<section><h2>De bordas a contornos e formas</h2><p>Depois de identificar bordas, outros algoritmos podem procurar contornos e analisar suas propriedades, como área, perímetro e formato. Assim, é possível reconhecer figuras simples, como círculos e retângulos, ou localizar regiões de interesse.</p></section>
+<section><h2>Aplicações no mundo real</h2><p>Essas técnicas aparecem em inspeção industrial, análise de documentos, robótica, processamento de imagens médicas e sistemas de assistência à direção. Em aplicações reais, a detecção de bordas costuma ser apenas uma parte de um sistema maior.</p></section>
+<section><h2>Exemplo prático</h2><p>Imagine a foto de uma mesa com objetos. Primeiro, suavizamos a imagem para reduzir ruídos. Depois, aplicamos Canny para destacar contornos. Por fim, podemos analisar esses contornos para tentar distinguir objetos ou identificar formas geométricas.</p><div class="highlight">Imagem original → Suavização → Detecção de bordas → Análise de contornos → Identificação de formas</div></section>
+  <section><h2>Minha reflexão</h2><div class="highlight">Achei interessante perceber que uma imagem pode ser analisada a partir de suas mudanças de intensidade. A detecção de bordas mostra como operações matemáticas relativamente simples podem ajudar a extrair informações úteis de uma cena.</div></section>
+  <section class="reference"><h2>Para aprofundar</h2>
+    <p><a href="https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html" target="_blank" rel="noopener noreferrer">Documentação do OpenCV — Filtragem de imagens</a></p>
+    <p><a href="https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html" target="_blank" rel="noopener noreferrer">Documentação do OpenCV — Detecção de bordas com Canny</a></p>
+  </section>
+</main>
+<footer><div class="container"><p>© 2026 Computação Visual — Blog da disciplina</p></div></footer>
+</body>
+</html>

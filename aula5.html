@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 5 | Filtros no Processamento de Imagens — Computação Visual</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="container nav">
+  <a class="logo" href="index.html">Computação Visual</a>
+  <a class="back-link" href="index.html#aulas">← Voltar para as aulas</a>
+</div></header>
+<main class="container article">
+  <span class="tag">AULA 5</span>
+  <h1>Filtros no Processamento de Imagens</h1>
+  <p class="lead">Como os computadores reduzem ruídos, suavizam fotografias e destacam detalhes por meio de operações sobre os pixels.</p>
+  <section><h2>O que são filtros de imagem?</h2><p>Filtros são operações matemáticas aplicadas aos pixels para modificar a aparência de uma imagem ou facilitar sua análise. Eles podem reduzir ruídos, suavizar regiões, destacar detalhes e preparar imagens para etapas posteriores de visão computacional.</p></section>
+<section><h2>Como funciona a filtragem?</h2><p>Uma imagem digital pode ser vista como uma matriz de pixels. Em muitos filtros, uma pequena matriz chamada <strong>kernel</strong> (ou máscara) percorre a imagem e combina os valores dos pixels vizinhos para calcular um novo valor. Esse processo é conhecido como convolução em muitos casos.</p><div class="highlight"><strong>Exemplo:</strong> um filtro de média 3 × 3 substitui cada pixel pela média dos valores de uma vizinhança de nove pixels, suavizando variações bruscas.</div></section>
+<section><h2>Filtro Gaussiano</h2><p>O filtro Gaussiano suaviza a imagem usando uma média ponderada: pixels próximos do centro recebem pesos maiores. É útil para reduzir pequenas variações e ruídos, embora também possa diminuir detalhes finos.</p></section>
+<section><h2>Filtro de mediana</h2><p>O filtro de mediana substitui o valor de um pixel pela mediana dos valores de sua vizinhança. É especialmente útil para ruídos do tipo “sal e pimenta”, formados por pontos muito claros ou escuros, e costuma preservar melhor algumas bordas do que a média simples.</p></section>
+<section><h2>Filtros de nitidez</h2><p>Filtros de nitidez realçam mudanças de intensidade e detalhes. Eles podem tornar contornos mais perceptíveis, mas, quando aplicados em excesso, também aumentam ruídos e artefatos.</p></section>
+<section><h2>Onde são usados?</h2><p>Na fotografia, ajudam a melhorar imagens. Em exames médicos, podem auxiliar na preparação para análise. Em sistemas de visão computacional, são usados antes de detectar bordas, objetos ou características relevantes.</p></section>
+<section><h2>Exemplo prático</h2><p>Imagine uma fotografia com pequenos pontos de ruído. Primeiro, podemos aplicar um filtro de mediana para reduzir esses pontos. Depois, um filtro de nitidez pode destacar detalhes importantes. A escolha do filtro depende do problema: não existe um filtro ideal para todas as imagens.</p></section>
+  <section><h2>Minha reflexão</h2><div class="highlight">Percebi que melhorar uma imagem não significa apenas deixá-la mais bonita. Cada filtro modifica informações e pode ajudar ou atrapalhar uma análise. Por isso, é importante entender o objetivo antes de escolher a técnica.</div></section>
+  <section class="reference"><h2>Para aprofundar</h2>
+    <p><a href="https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html" target="_blank" rel="noopener noreferrer">Documentação do OpenCV — Filtragem de imagens</a></p>
+    <p><a href="https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html" target="_blank" rel="noopener noreferrer">Documentação do OpenCV — Detecção de bordas com Canny</a></p>
+  </section>
+</main>
+<footer><div class="container"><p>© 2026 Computação Visual — Blog da disciplina</p></div></footer>
+</body>
+</html>

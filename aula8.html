@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 8 | Ray Tracing e Iluminação Realista — Computação Visual</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="container nav"><a class="logo" href="index.html">Computação Visual</a><a class="back-link" href="index.html#aulas">← Voltar para as aulas</a></div></header>
+<main class="container article">
+<span class="tag">AULA 8</span>
+<h1>Ray Tracing: como a luz é simulada nos jogos e na Computação Gráfica</h1>
+<p class="lead">Reflexos em espelhos, sombras suaves e iluminação realista não aparecem por acaso. Nesta aula, vamos entender como o ray tracing simula o comportamento da luz para criar cenas digitais mais convincentes.</p>
+
+<section><h2>O que é Ray Tracing?</h2>
+<p><strong>Ray tracing</strong>, ou rastreamento de raios, é uma técnica de renderização que calcula como raios de luz interagem com objetos de uma cena virtual. A partir dessas interações, o computador pode produzir reflexos, sombras, transparências e iluminação indireta.</p>
+<p>Embora o nome sugira acompanhar a luz desde sua origem, muitos algoritmos partem da câmera virtual em direção à cena. Isso ajuda a concentrar os cálculos nos raios que podem contribuir para a imagem exibida.</p>
+<div class="highlight"><strong>Exemplo:</strong> imagine um espelho em um jogo. Para representar o que ele reflete, o sistema pode rastrear raios que atingem o espelho e continuar seu caminho até outros objetos da cena.</div></section>
+
+<section><h2>Como funciona o rastreamento de raios?</h2>
+<p>De forma simplificada, o programa lança raios a partir da câmera, verifica quais objetos são atingidos e calcula como as superfícies interagem com a luz. Dependendo do material, um raio pode ser refletido, refratado ou ter parte de sua energia absorvida.</p>
+<div class="highlight"><strong>Fluxo simplificado:</strong> Câmera virtual → Raio → Objeto → Interação com a luz → Cor do pixel</div>
+<p>Em cenas complexas, um raio pode originar outros raios para representar reflexos, sombras ou iluminação indireta. Quanto mais interações forem calculadas, maior pode ser o custo computacional.</p></section>
+
+<section><h2>Reflexos, sombras e refração</h2>
+<h3>Reflexos</h3>
+<p>Superfícies como espelhos, metais e água podem refletir elementos do ambiente. O ray tracing permite considerar objetos que nem sempre estão visíveis diretamente na tela.</p>
+<h3>Sombras</h3>
+<p>Ao verificar se existe algum obstáculo entre uma superfície e uma fonte de luz, o algoritmo ajuda a determinar regiões iluminadas e sombreadas. Com fontes de luz extensas e amostragem adequada, também é possível obter sombras suaves.</p>
+<h3>Refração</h3>
+<p>Quando a luz atravessa materiais transparentes, como vidro e água, sua direção pode mudar. Simular esse comportamento contribui para a aparência desses materiais.</p></section>
+
+<section><h2>Iluminação global: a luz também rebate</h2>
+<p>Na vida real, a luz não ilumina apenas os objetos que atinge diretamente. Ela também pode refletir em paredes, pisos e outros materiais, iluminando regiões ao redor.</p>
+<p>A <strong>iluminação global</strong> considera essas contribuições indiretas. Por exemplo, uma parede vermelha pode refletir luz avermelhada sobre um objeto branco próximo, fenômeno conhecido como <em>color bleeding</em>.</p>
+<p>O <strong>path tracing</strong> é uma técnica da família do ray tracing que utiliza amostragens de caminhos de luz e pode considerar múltiplas interações para aproximar a iluminação de uma cena.</p></section>
+
+<section><h2>Ray Tracing x Rasterização</h2>
+<p>A <strong>rasterização</strong> transforma a geometria dos modelos 3D em fragmentos e pixels na tela. Ela é muito eficiente e foi a base de grande parte dos gráficos de jogos em tempo real.</p>
+<p>Já o ray tracing concentra-se em rastrear trajetórias de raios e suas interações com a cena, sendo especialmente útil para certos efeitos de iluminação.</p>
+<div class="highlight"><strong>Rasterização:</strong> geralmente mais rápida para desenhar a geometria da cena.<br>
+<strong>Ray tracing:</strong> pode produzir efeitos de iluminação e reflexos mais consistentes fisicamente, mas exige mais processamento.<br>
+<strong>Renderização híbrida:</strong> combina as duas técnicas para equilibrar qualidade visual e desempenho.</div></section>
+
+<section><h2>Por que o Ray Tracing exige tanto da GPU?</h2>
+<p>Para renderizar uma imagem, o computador precisa calcular muitas interseções entre raios e objetos. Em cenas detalhadas, esse trabalho cresce rapidamente, principalmente quando são considerados vários reflexos e caminhos de luz.</p>
+<p>Algumas GPUs possuem unidades dedicadas para acelerar essas operações. Além disso, técnicas de <strong>redução de ruído (denoising)</strong> ajudam a produzir imagens mais limpas com menos raios calculados.</p>
+<p>Mesmo com essas otimizações, ativar ray tracing pode reduzir a taxa de quadros por segundo (FPS), dependendo do jogo, da resolução, das configurações e do hardware.</p></section>
+
+<section><h2>Qual é a relação com a Aula 7 sobre shaders?</h2>
+<p>Na Aula 7, vimos que shaders são programas executados no processamento gráfico para calcular características visuais. O ray tracing utiliza cálculos de interseção e programas específicos para determinar o que acontece quando um raio encontra uma superfície.</p>
+<p>Assim, os temas se complementam: <strong>shaders ajudam a calcular a aparência dos materiais</strong>, enquanto o <strong>ray tracing permite investigar como a luz interage com a geometria</strong>. Não são tecnologias concorrentes; podem trabalhar juntas.</p></section>
+
+<section><h2>Onde essa tecnologia é utilizada?</h2>
+<p>Além dos videogames, o ray tracing é usado em animação e cinema, visualização arquitetônica, design de produtos e criação de imagens 3D. Nesses contextos, o objetivo pode ser alcançar iluminação convincente mesmo quando a renderização não acontece em tempo real.</p></section>
+
+<section><h2>Exemplo prático</h2>
+<p>Imagine uma sala virtual com uma janela, um piso brilhante e uma esfera metálica. Sem ray tracing, o jogo pode usar técnicas aproximadas para simular sombras e reflexos. Com ray tracing, pode calcular raios que atingem o piso e a esfera, considerando elementos do ambiente para produzir reflexos e iluminação mais coerentes.</p>
+<div class="highlight"><strong>Experimento sugerido:</strong> em um jogo que ofereça essa opção, compare a mesma cena com ray tracing desligado e ligado. Observe os reflexos, as sombras, a iluminação de cantos e também o FPS.</div></section>
+
+<section><h2>Minha reflexão</h2>
+<div class="highlight">Ao estudar ray tracing, percebi que criar uma imagem realista não depende apenas de modelos 3D detalhados. A forma como a luz se comporta é fundamental para que uma cena pareça natural. Também entendi melhor por que melhorar a qualidade visual exige mais processamento e como os desenvolvedores precisam equilibrar realismo e desempenho.</div></section>
+
+<section class="reference"><h2>Referências e aprofundamento</h2>
+<p><a href="https://developer.nvidia.com/discover/ray-tracing" target="_blank" rel="noopener noreferrer">NVIDIA Developer — Ray Tracing</a></p>
+<p><a href="https://unity.com/glossary/ray-tracing" target="_blank" rel="noopener noreferrer">Unity — What is Ray Tracing?</a></p>
+<p><a href="https://blogs.nvidia.com/blog/whats-difference-between-ray-tracing-rasterization/" target="_blank" rel="noopener noreferrer">NVIDIA — Diferenças entre Ray Tracing e Rasterização</a></p>
+</section>
+</main>
+<footer><div class="container"><p>© 2026 Computação Visual — Blog da disciplina</p></div></footer>
+</body>
+</html>
