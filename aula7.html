@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 7 | Shaders e Efeitos Visuais — Computação Visual</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="container nav"><a class="logo" href="index.html">Computação Visual</a><a class="back-link" href="index.html#aulas">← Voltar para as aulas</a></div></header>
+<main class="container article">
+<span class="tag">AULA 7</span>
+<h1>Shaders: como os jogos criam efeitos visuais</h1>
+<p class="lead">Por trás das sombras, reflexos e materiais de um jogo, existem pequenos programas executados pela placa de vídeo. Entenda como eles funcionam e por que sua compilação pode causar travamentos no PC.</p>
+<section><h2>O que são shaders?</h2>
+<p>Shaders são programas utilizados no processamento gráfico para realizar cálculos sobre vértices, pixels ou outros dados de uma cena. Eles ajudam a determinar como os objetos serão apresentados na tela, incluindo efeitos de iluminação, cores, texturas, transparência e reflexos.</p>
+<p>O artigo do Canaltech apresenta uma comparação simples: os shaders funcionam como receitas que orientam a placa de vídeo na criação de elementos visuais. Por exemplo, eles ajudam a calcular como uma superfície metálica reflete luz ou como uma poça d’água aparece na cena.</p>
+<div class="highlight"><strong>Exemplo:</strong> em um jogo, o mesmo objeto pode parecer brilhante, fosco ou molhado dependendo dos cálculos e parâmetros usados pelos shaders.</div></section>
+<section><h2>Qual é o papel da GPU?</h2>
+<p>A <strong>GPU</strong> (unidade de processamento gráfico) foi projetada para executar muitos cálculos gráficos em paralelo. Em vez de calcular manualmente a aparência de cada ponto de uma imagem, o motor gráfico organiza a cena e utiliza programas especializados para processar seus elementos.</p>
+<p>É importante diferenciar o modelo 3D, que descreve a geometria, das texturas, que armazenam informações visuais, e dos shaders, que definem cálculos usados durante a renderização.</p></section>
+<section><h2>Principais tipos de shaders</h2>
+<h3>Vertex shader</h3><p>Processa vértices da geometria, permitindo transformar posições e preparar informações para etapas seguintes. É usado, por exemplo, ao posicionar objetos 3D na cena.</p>
+<h3>Fragment shader (ou pixel shader)</h3><p>Calcula resultados associados aos fragmentos gerados na rasterização, frequentemente incluindo cor, iluminação e materiais. É fundamental para a aparência das superfícies.</p>
+<h3>Compute shader</h3><p>Executa cálculos paralelos mais gerais na GPU. Pode ser utilizado em efeitos visuais, simulações e processamento de imagens, sem se limitar ao desenho tradicional de triângulos.</p></section>
+<section><h2>Como uma imagem é renderizada?</h2>
+<p>Em um fluxo gráfico simplificado, o motor prepara a geometria da cena, processa seus vértices, converte as formas em fragmentos e calcula as informações necessárias para gerar os pixels exibidos.</p>
+<div class="highlight"><strong>Fluxo simplificado:</strong> Cena 3D → Vértices → Rasterização → Fragmentos e iluminação → Imagem na tela</div>
+<p>Esse é um resumo didático: os pipelines gráficos modernos podem incluir outras etapas e técnicas, como ray tracing.</p></section>
+<section><h2>O que significa compilar shaders?</h2>
+<p>Os desenvolvedores escrevem shaders em linguagens próprias para programação gráfica. Para executá-los em uma GPU, ferramentas e drivers precisam traduzir ou preparar essas instruções para o hardware e a API gráfica utilizados.</p>
+<p>Segundo o Canaltech, isso é especialmente perceptível nos PCs porque existem muitas combinações de placas de vídeo, drivers e sistemas. Assim, parte da preparação pode ocorrer na própria máquina do jogador.</p></section>
+<section><h2>Por que a compilação pode causar travamentos?</h2>
+<p>Quando um jogo precisa preparar um shader ou uma configuração de pipeline durante a partida, essa tarefa pode interromper ou atrasar a produção de um quadro. O resultado pode ser o <em>stuttering</em>: pequenas travadas mesmo quando a média de FPS parece boa.</p>
+<p>Uma alternativa é preparar shaders antecipadamente, por exemplo durante uma tela inicial de carregamento, e reutilizar resultados por meio de caches. Isso não elimina todos os problemas de desempenho, mas pode reduzir travamentos ligados à compilação.</p>
+<div class="highlight"><strong>FPS não conta toda a história:</strong> um jogo pode apresentar média de quadros alta e, ainda assim, parecer pouco fluido quando alguns quadros demoram muito mais que outros.</div></section>
+<section><h2>PC e consoles: qual é a diferença?</h2>
+<p>Consoles normalmente têm configurações de hardware mais previsíveis, o que facilita preparar shaders e pipelines com antecedência. No PC, a diversidade de GPUs e drivers exige mais adaptações. Isso não significa que todo jogo de PC terá travamentos ou que consoles nunca terão problemas de compilação.</p></section>
+<section><h2>O que pode ajudar?</h2>
+<p>Concluir a etapa de compilação inicial oferecida pelo jogo, manter drivers compatíveis e permitir o uso do cache de shaders são medidas que podem ajudar. No entanto, a qualidade da implementação feita pelos desenvolvedores continua sendo decisiva. Atualizações de jogo ou driver também podem exigir recompilação.</p></section>
+<section><h2>Relação com a Computação Visual</h2>
+<p>Shaders conectam matemática, programação e representação visual. Eles transformam dados geométricos e propriedades dos materiais em resultados visuais. Por isso, são um ótimo exemplo de como a Computação Visual vai além de armazenar imagens: ela também permite gerar cenas digitais complexas em tempo real.</p></section>
+<section><h2>Minha reflexão</h2><div class="highlight">Antes, eu associava a qualidade gráfica principalmente à potência da placa de vídeo. Ao estudar shaders, percebi que o resultado depende também dos programas que calculam os efeitos e de como eles são preparados. Entendi por que um jogo pode ter gráficos impressionantes e, mesmo assim, apresentar travamentos durante a execução.</div></section>
+<section class="reference"><h2>Referências e aprofundamento</h2>
+<p><a href="https://canaltech.com.br/games/o-que-e-compilacao-de-shaders-e-por-que-ela-incomoda-tanto-no-pc/" target="_blank" rel="noopener noreferrer">Canaltech — O que é compilação de shaders e por que ela incomoda tanto no PC</a> (referência principal)</p>
+<p><a href="https://www.khronos.org/opengl/wiki/Shader" target="_blank" rel="noopener noreferrer">Khronos OpenGL Wiki — Shader</a> (tipos de shaders e conceitos de programação gráfica)</p>
+</section>
+</main>
+<footer><div class="container"><p>© 2026 Computação Visual — Blog da disciplina</p></div></footer>
+</body></html>
